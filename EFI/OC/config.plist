@@ -1022,7 +1022,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>agdpmod=pikera watchdog=0 -wegnoigpu</string>
+				<string>-v agdpmod=pikera watchdog=0 -wegnoigpu</string>
 				<key>csr-active-config</key>
 				<data>5wMAAA==</data>
 				<key>prev-lang:kbd</key>
