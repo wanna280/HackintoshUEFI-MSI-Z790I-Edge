@@ -63,9 +63,6 @@ https://github.com/OpenIntelWireless/itlwm/releases
 
 * Kexts/USBInjectAll.kext
 
-下面这个驱动是有线网卡(Realtek 的 2.5Gb 的网卡驱动)驱动，如果是别的网卡，需要去进行更换
-
-* Kexts/LucyRTL8125Ethernet.kext
 
 下面是Intel的无线网卡驱动。但是Intel网卡的隔空投送(投送文件)和随航(让ipad做mac的第二块屏幕)功能无法使用。更换博通网卡可以才能让这些功能正常使用，得换别的网卡驱动。
 
