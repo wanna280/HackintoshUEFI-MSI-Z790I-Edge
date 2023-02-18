@@ -916,15 +916,51 @@
 				<key>Auxiliary</key>
 				<false/>
 				<key>Comment</key>
-				<string>Not signed for security reasons</string>
+				<string>Ubuntu</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>Flavour</key>
-				<string>Auto</string>
+				<string>Ubuntu:Linux</string>
 				<key>Name</key>
-				<string>CustomOS</string>
+				<string>Ubuntu</string>
 				<key>Path</key>
-				<string>PciRoot(0x0)/Pci(0x1,0x1)/Pci(0x0,0x0)/NVMe(0x1,11-22-33-44-55-66-77-88)/HD(1,GPT,00000000-0000-0000-0000-000000000000,0x800,0x64000)/\EFI\BOOT\BOOTX64.EFI</string>
+				<string>PciRoot(0x0)/Pci(0x1A,0x0)/Pci(0x0,0x0)/NVMe(0x1,CB-54-88-2B-01-75-A0-00)/HD(1,GPT,E57C3255-B20D-4411-8988-A4122B5F15BD,0x800,0x1400000)/\EFI\ubuntu\grubx64.efi</string>
+				<key>TextMode</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Auxiliary</key>
+				<false/>
+				<key>Comment</key>
+				<string>WinPEBoot</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Flavour</key>
+				<string>WindowsPE:Windows</string>
+				<key>Name</key>
+				<string>WePE</string>
+				<key>Path</key>
+				<string>PciRoot(0x0)/Pci(0x1A,0x0)/Pci(0x0,0x0)/NVMe(0x1,CB-54-88-2B-01-75-A0-00)/HD(1,GPT,E57C3255-B20D-4411-8988-A4122B5F15BD,0x800,0x1400000)/\EFI\WEPE\BOOTX64.efi</string>
+				<key>TextMode</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Arguments</key>
+				<string></string>
+				<key>Auxiliary</key>
+				<false/>
+				<key>Comment</key>
+				<string>Win10Boot</string>
+				<key>Enabled</key>
+				<true/>
+				<key>Flavour</key>
+				<string>Windows10:Windows</string>
+				<key>Name</key>
+				<string>Windows10</string>
+				<key>Path</key>
+				<string>PciRoot(0x0)/Pci(0x1A,0x0)/Pci(0x0,0x0)/NVMe(0x1,CB-54-88-2B-01-75-A0-00)/HD(1,GPT,E57C3255-B20D-4411-8988-A4122B5F15BD,0x800,0x1400000)/\EFI\Microsoft\Boot\bootmgfw.efi</string>
 				<key>TextMode</key>
 				<false/>
 			</dict>
