@@ -2,21 +2,17 @@
 # 1. 说明
 
 环境为：
-* 1.CPU为13900K。
+* 1.CPU为13900K。(13代的别的CPU，例如13600K，13700K也完全可以参考)
 * 2.显卡为AMD6800XT。
 * 3.主板为微星Z790ITX刀锋。
 
 
-需要提前在微星主板BIOS执行操作：
+需要提前在微星主板BIOS(开机按Delete键可以进入BIOS)执行下面的操作。
 
 * 1.关闭安全启动(SecureBoot)，位置在"Settings"-"安全"-"安全引导"-"安全启动"，关闭。
 * 2.关闭CFG Lock，位置在"OC"-"CPU特征"-"CFG锁定"，关闭。
 * 3.关闭快速启动，位置在"Settings"-"启动"-"快速启动"，关闭。
 
-
-Intel AX211网卡驱动Kext下载地址，根据系统版本下载对应的Kext。
-
-https://github.com/OpenIntelWireless/itlwm/releases
 
 
 
@@ -26,14 +22,14 @@ https://github.com/OpenIntelWireless/itlwm/releases
 
 定义了主板BIOS、UEFI与操作系统之间的硬件接口。它主要存放一些系统的电源管理以及硬件配置的接口，ACPI目录下主要放置的文件格式为SSDT-XXX.aml文件。
 
-下面4项对于B300系列之后的主板是必须的
+下面这几项，对于B300系列之后的主板都是必须的
 
 * ACPI/SSDT-PLUG-DRTNIA.aml
 * ACPI/SSDT-EC-USBX-DESKTOP.aml
 * ACPI/SSDT-AWAC.aml
 * ACPI/SSDT-RHUB.aml
 
-下面两项是定制的USB需要用到的配置(对于别的主板需要进行自定义，这里使用的是微星B460i，这个主要决定主板上的USB3.0接口是否生效，因为macos系统只能允许15个USB端口的存在)
+下面两项是定制的USB需要用到的配置(对于别的主板需要进行自定义，这里使用的是微星Z790I EDGE WIFI，这个主要决定主板上的USB3.0接口是否生效，因为macos系统只能允许15个USB端口的存在)
 
 * ACPI/SSDT-EC-USBX-DESKTOP.aml
 * ACPI/SSDT-EC-USBX.aml
@@ -65,10 +61,13 @@ https://github.com/OpenIntelWireless/itlwm/releases
 * Kexts/USBInjectAll.kext
 
 
-下面是Intel的无线网卡驱动。但是Intel网卡的隔空投送(投送文件)和随航(让ipad做mac的第二块屏幕)功能无法使用。更换博通网卡可以才能让这些功能正常使用，得换别的网卡驱动。
+Intel AX211网卡驱动Kext下载地址，根据系统版本下载对应的Kext。但是Intel网卡的隔空投送(投送文件)和随航(让ipad做mac的第二块屏幕)功能无法使用。更换博通网卡可以才能让这些功能正常使用，得换别的网卡驱动。
 
+* Kexts/AirportItlwm.kext
 * Kexts/IntelBluetoothFirmware.kext
-* Kexts/IntelBluetoothInjector.kext
+
+https://github.com/OpenIntelWireless/itlwm/releases
+
 
 ## 2.3 Drivers-驱动文件
 
@@ -98,7 +97,9 @@ https://github.com/OpenIntelWireless/itlwm/releases
 
 ## 2.6 config.plist和OpenCore.efi
 
-这两个配置文件都是OpenCore引导的关键文件，OpenCore.efi的作用是去引导macos系统的启动，肯定是OpenCore引导的核心。config.plist是OpenCore引导的核心配置文件，OC所有的配置都在这个文件中配置，包括对ACPI、Drivers、Kexts等去进行了更改，都需要在配置文件中去进行配置。
+这两个配置文件都是OpenCore引导的关键文件，OpenCore.efi的作用是去引导macos系统的启动，肯定是OpenCore引导的核心。
+
+config.plist是OpenCore引导的核心配置文件，OC所有的配置都在这个文件中配置，包括对ACPI、Drivers、Kexts等去进行了更改，都需要在配置文件中去进行配置。
 
 编辑plist配置文件，在Macos上可以使用OpenCoreConfigurator这个工具去进行编辑，在Windows上可以使用QtOpenCoreConfigurator去进行编辑，当然其实使用ProperTree这个专门编辑plist配置文件的工具去进行编辑也可以，甚至熟悉编程的朋友，还可以使用像VSCode、SublimeText等编辑器去进行编辑。
 
